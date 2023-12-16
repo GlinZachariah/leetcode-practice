@@ -14,12 +14,12 @@ public class Assert {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
-    public static boolean equals(Object expected,Object actual,String message) {
+    public static boolean equals(Object actual,Object expected,String message) {
         if(Objects.equals(expected, actual)){
             System.out.println(ANSI_GREEN+" "+message+":: Success"+ANSI_RESET);
             return true;
         }
-        System.out.println(ANSI_RED+" "+message+":: Failed"+ANSI_RESET);
+        System.out.println(ANSI_RED+" "+message+":: Expected : "+expected+" Got : "+actual+" instead ! Failed"+ANSI_RESET);
         return false;
     }
 }
